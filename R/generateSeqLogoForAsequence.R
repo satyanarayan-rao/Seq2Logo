@@ -1,8 +1,10 @@
+
 #' Title
 #'
 #' @param sequence
-#' @param encodingFile
 #' @param image_file_name
+#' @param encodingFile
+#' @param dpi
 #'
 #' @return
 #' @export
