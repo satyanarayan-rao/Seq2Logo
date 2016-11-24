@@ -5,6 +5,9 @@
 #' @param image_file_name
 #' @param dpi
 #' @param save_to_dir
+#' @param encodingFile
+#' @param height
+#' @param width
 #'
 #' @return
 #' @export
@@ -14,6 +17,8 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
                                          image_file_name = "pwm.png",
                                          save_to_dir = "~/",
                                          encodingFile = NULL,
+                                         height = 4,
+                                         width = 6.48, # golen ratio * height
                                          dpi = 150){
     seq = sequence
     if (is.null(encodingFile)) {
@@ -23,6 +28,9 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
     pwm = seqLogo::makePWM(encodedMatrix)
     pngfileName = paste (save_to_dir, image_file_name, sep = "/")
     png (filename = pngfileName,
+         height = 4,
+         width = 7,
+         units = "in",
          res = dpi)
     seqLogo::seqLogo(pwm)
     dev.off()
