@@ -8,7 +8,10 @@
 #' @export
 #'
 #' @examples
-generateSeqLogoForAsequence <- function (sequence = "AAACCTAA", encodingFile = NULL, image_file_name = "pwm.png"){
+generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
+                                         image_file_name = "pwm.png",
+                                         encodingFile = NULL,
+                                         dpi = 150){
     seq = sequence
     if (is.null(encodingFile)) {
         encodingFile = system.file("extdata", "oneHotEncode.txt", package = "Seq2Logo")
@@ -16,7 +19,7 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA", encodingFile = N
     encodedMatrix = OneHotEncode(seq, encodingFile)
     pwm = seqLogo::makePWM(encodedMatrix)
     png (filename = image_file_name,
-         res = 96)
+         res = dpi)
     seqLogo(pwm)
     dev.off()
 }

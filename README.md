@@ -6,5 +6,6 @@ devtools::install_github ("satyausc/Seq2Logo",
                           repos = BiocInstaller::biocinstallRepos()) 
 seq = "AACCTTGG"
 Seq2Logo::generateSeqLogoForAsequence(sequence = seq, 
-                                      image_file_name = "pwm.png")
+                                      image_file_name = "pwm.png",
+                                      dpi = 150)
 ```
