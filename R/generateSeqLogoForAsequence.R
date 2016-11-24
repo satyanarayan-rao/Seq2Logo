@@ -1,3 +1,13 @@
+#' Title
+#'
+#' @param sequence
+#' @param encodingFile
+#' @param image_file_name
+#'
+#' @return
+#' @export
+#'
+#' @examples
 generateSeqLogoForAsequence <- function (sequence = "AAACCTAA", encodingFile = NULL, image_file_name = "pwm.png"){
     seq = sequence
     if (is.null(encodingFile)) {
