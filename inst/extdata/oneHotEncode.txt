@@ -1,0 +1,5 @@
+Letter  Encoding
+A   1000
+C   0100
+G   0010
+T   0001
