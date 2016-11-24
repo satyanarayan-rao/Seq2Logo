@@ -19,7 +19,8 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
                                          encodingFile = NULL,
                                          height = 4,
                                          width = 6.48, # golen ratio * height
-                                         dpi = 150){
+                                         dpi = 150,
+                                         onlyLetters = TRUE){
     seq = sequence
     if (is.null(encodingFile)) {
         encodingFile = system.file("extdata", "oneHotEncode.txt", package = "Seq2Logo")
@@ -32,7 +33,14 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
          width = 7,
          units = "in",
          res = dpi)
-    seqLogo::seqLogo(pwm)
+    if (onlyLetters == TRUE) {
+        seqLogo::seqLogo(pwm = pwm,
+                         xaxis = FALSE, yaxis = FALSE,
+                         ic.scale = FALSE)
+    } else {
+        seqLogo::seqLogo(pwm = pwm)
+    }
+
     dev.off()
 }
 OneHotEncode <- function (sequence, encodingFile){
