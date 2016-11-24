@@ -14,7 +14,7 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA", encodingFile = N
         encodingFile = system.file("extdata", "oneHotEncode.txt", package = "Seq2Logo")
     }
     encodedMatrix = OneHotEncode(seq, encodingFile)
-    pwm = makePWM(encodedMatrix)
+    pwm = seqLogo::makePWM(encodedMatrix)
     png (filename = image_file_name,
          res = 96)
     seqLogo(pwm)
