@@ -22,7 +22,7 @@ generateSeqLogoForAsequence <- function (sequence = "AAACCTAA",
     pwm = seqLogo::makePWM(encodedMatrix)
     png (filename = image_file_name,
          res = dpi)
-    seqLogo(pwm)
+    seqLogo::seqLogo(pwm)
     dev.off()
 }
 OneHotEncode <- function (sequence, encodingFile){
